@@ -1,24 +1,44 @@
 ﻿
-function calcMortgage() {
-    let amountBorrowed = document.getElementById("inpLoan").value;         //for example: 250K
-    let downPayment = document.getElementById("inpDown").value;            //for example, 20%
-    let APR = document.getElementById("inpAPR").value;                    //percentage, for example: 5%
-    let term = document.getElementById("inpTerm").value;                   //for example: 15 or 30 years
+    function calcMortgage() {
 
 
 
-    let principal = amountBorrowed - ((downPayment * .01) * amountBorrowed);    //Amount borrowed - down payment made
+        let amountLoaned = document.getElementById("inpLoan").value;      //for example: 250K
 
-    let MIR = (APR * .01) / 12;         //Monthly Interest Rate
+        let term = document.getElementById("inpTerm").value;             //for example: 15 or 30 years
 
-    let NMP = term * 12;                //Number of Monthly Payments
+        let APR = document.getElementById("inpAPR").value;             //percentage, for example: 5%
 
-    let Mortgage = principal * (MIR * (1 + MIR) ** NMP) / ((1 + MIR) ** (NMP - 1));
+        let numOfMonths = term * 12;                                    //Number of Monthly Payments
 
-};
+       
 
-   document.getElementById(output).innerHTML = Mortgage;
 
+
+
+        let totalMonthlyPayment = (amountLoaned * (APR / 1200)) / (1 - (1 + (APR / 1200) ** numOfMonths));
+
+        let remainingBalance = amountLoaned;
+
+        let interestPayment = remainingBalance * (APR / 1200);
+
+        let principalPayment = totalMonthlyPayment - interestPayment;
+
+        /*At the end of each month*/ let remainingBalance = remainingBalance - principalPayment;
+
+
+
+
+        
+
+
+
+
+
+
+    };
+
+  
 
 
 
