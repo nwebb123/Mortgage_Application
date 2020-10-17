@@ -16,48 +16,37 @@
         
 
 
+        // 1) Table that lists the month (1-total number of payments)
+            //for (i = 0; i <= 12; i++)
+            let paymentArray
 
 
-        //Total Monthly Payment
+        // 2) Total Monthly Payment (The payment amount)
         let totalMonthlyPayment = amountLoaned * (APR / 1200) / (1 - (Math.pow(base, -numOfMonths)));
 
-        document.getElementById("output1").innerHTML = `Your Monthly Payment = $${Math.round(totalMonthlyPayment)}`;
+        document.getElementById("output2").innerHTML = `Your monthly payment = $${Math.round(totalMonthlyPayment)}`;
 
-        //Remaining Balance
-        let remainingBalance = amountLoaned[i];
-
-
-        //Principal Payment
+        // 3) The principal paid this month
         let principalPayment = totalMonthlyPayment - interestPayment;
 
-        document.getElementById("output2").innerHTML = `Principal Payment = $${(totalPrincipal)}`;
+        document.getElementById("output3").innerHTML = `The principal paid this month = $${Math.round(principalPayment)}`;
 
 
-        //Total principal
-        let totalInterest = amountLoaned ;
-
-        document.getElementById("output3").innerHTML = `Total Monthly Payment = $${(totalInterest)}`;
-
-
-        //Total Cost
-        let principalPayment = "";
-
-        document.getElementById("output4").innerHTML = `Total Cost of Loan = $${(principalPayment)}`;
-
-        
-
-        //Table that Indicates the Months, payments, principals, interest, total interest to date, and remaining balance
-        for (i = 0; i <= 12; i++)
-            //need to print out 
-
-
-        /*let remainingBalance = amountLoaned;
-
+        // 4) The Interest paid this month
         let interestPayment = remainingBalance * (APR / 1200);
+        document.getElementById("output4").innerHTML = `The interest paid this month = $${Math.round(interestPayment)}`;
 
-        let principalPayment = totalMonthlyPayment - interestPayment;
+        // 5) The total interst paid to date
+        let interestTotal = principalPayment * interestPayment * term;
+        document.getElementById("output5").innerHTML = `The total interest paid to date = $${Math.round(interestTotal)}`;
+
+        // 6) The remaining loan balance at the end of the month
+        let remainingbalanceBalance = amountLoaned;
+        document.getElementById("output6").innerHTML = `The remaining loan balance = $${Math.round(remainingLoanBalance)}`;
+
         
-        let remainingBalance = remainingBalance - principalPayment; */
+
+        
 
     };
 
