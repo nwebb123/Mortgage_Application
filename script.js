@@ -1,24 +1,67 @@
 ﻿
-function calcMortgage() {
-    let amountBorrowed = document.getElementById("inpLoan").value;         //for example: 250K
-    let downPayment = document.getElementById("inpDown").value;            //for example, 20%
-    let APR = document.getElementById("inpAPR").value;                    //percentage, for example: 5%
-    let term = document.getElementById("inpTerm").value;                   //for example: 15 or 30 years
+    function calcMortgage() {
+
+        //List of variables (Declarations)
+
+        let amountLoaned = document.getElementById("inpLoan").value;      //for example: 250K
+
+        let term = document.getElementById("inpTerm").value;             //for example: 15 or 30 years
+
+        let APR = document.getElementById("inpAPR").value;             //percentage, for example: 5%
+
+        let numOfMonths = term * 12;                                    //Number of Monthly Payments
+
+        let base = (1 + (APR / 1200))
+
+        
 
 
 
-    let principal = amountBorrowed - ((downPayment * .01) * amountBorrowed);    //Amount borrowed - down payment made
 
-    let MIR = (APR * .01) / 12;         //Monthly Interest Rate
+        //Total Monthly Payment
+        let totalMonthlyPayment = amountLoaned * (APR / 1200) / (1 - (Math.pow(base, -numOfMonths)));
 
-    let NMP = term * 12;                //Number of Monthly Payments
+        document.getElementById("output1").innerHTML = `Your Monthly Payment = $${Math.round(totalMonthlyPayment)}`;
 
-    let Mortgage = principal * (MIR * (1 + MIR) ** NMP) / ((1 + MIR) ** (NMP - 1));
+        //Remaining Balance
+        let remainingBalance = amountLoaned[i];
 
-};
 
-   document.getElementById(output).innerHTML = Mortgage;
+        //Principal Payment
+        let principalPayment = totalMonthlyPayment - interestPayment;
 
+        document.getElementById("output2").innerHTML = `Principal Payment = $${(totalPrincipal)}`;
+
+
+        //Total principal
+        let totalInterest = amountLoaned ;
+
+        document.getElementById("output3").innerHTML = `Total Monthly Payment = $${(totalInterest)}`;
+
+
+        //Total Cost
+        let principalPayment = "";
+
+        document.getElementById("output4").innerHTML = `Total Cost of Loan = $${(principalPayment)}`;
+
+        
+
+        //Table that Indicates the Months, payments, principals, interest, total interest to date, and remaining balance
+        for (i = 0; i <= 12; i++)
+            //need to print out 
+
+
+        /*let remainingBalance = amountLoaned;
+
+        let interestPayment = remainingBalance * (APR / 1200);
+
+        let principalPayment = totalMonthlyPayment - interestPayment;
+        
+        let remainingBalance = remainingBalance - principalPayment; */
+
+    };
+
+  
 
 
 

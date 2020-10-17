@@ -58,13 +58,6 @@
                 <input id="inpLoan" type="number" placeholder="Loan amount" />
             </div>
 
-            <!--Down Payment-->
-
-            <div class="col-lg">
-                <h2>Down Payment</h2>
-                <input id="inpDown" type="number" placeholder="Down Payment" />
-            </div>
-
             <!--Term (Years)-->
             <div class="col-lg">
                 <h2>Term (Years)</h2>
@@ -80,14 +73,17 @@
             <!--Button-->
             <div class="col-lg">
                 <h2>Calculate Mortgage</h2>
-                <button onclick="function calcMortgage()" class="btn-lg">Calculate</button>
+                <button onclick="calcMortgage()" class="btn-lg">Calculate</button>
             </div>
 
 
             <!--Output-->
             <div class="row text-center">
-                <div class="col-lg">
-                    <h2 id="output"></h2>
+                <div class="col">
+                    <h2 id="output1"></h2>
+                    <h2 id="output2"></h2>
+                    <h2 id="output3"></h2>
+                    <h2 id="output4"></h2>
                 </div>
             </div>
         </div>
