@@ -17,7 +17,7 @@
 
 
         // 1) Table that lists the month (1-total number of payments)
-            //for (i = 0; i <= 12; i++)
+            for (i = 0; i <= 12; i++)
             let paymentArray
 
 
