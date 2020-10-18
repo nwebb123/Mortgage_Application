@@ -61,16 +61,13 @@ function calcMortgage() {
     //Total Cost Output
     document.getElementById("dashCost").innerHTML = ` $${(totalPrincipal + totalInterest)}`;
 
-        //Update Chart
-        myChart.data.datasets[0].data[0] = totalPrincipal;
-        myChart.data.datasets[0].data[1] = totalInterest;
-        myChart.update({
-            duration: 800,
-            easing: 'easeOutBounce'
-        });
-
-        // 3) The principal paid this month
-        //let principalPayment = totalMonthlyPayment - interestPayment;
+    //Update Chart
+    myChart.data.datasets[0].data[0] = totalPrincipal;
+    myChart.data.datasets[0].data[1] = totalInterest;
+    myChart.update({
+        duration: 800,
+        easing: 'easeOutBounce'
+    });
 
     //populating our table with the data
     populateTable(numOfMonths, totalMonthlyPayment, arrayPrincipal, arrayInterest, arrayTotalInterest, remainingBalance, tableOutput);
@@ -79,6 +76,8 @@ function calcMortgage() {
 };
 
 function populateTable(months, monthlyPayment, principals, interests, totalInterests, balances, table) {           //representing arrays;
+    table.innerHTML = "";
+
     for (let i = 0; i < months; i++) {
         let row = table.insertRow(i);           //Insert the row into the table
 
