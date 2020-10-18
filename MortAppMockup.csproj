@@ -2601,8 +2601,7 @@
     <Content Include="examples\tables.html" />
     <Content Include="examples\upgrade.html" />
     <Content Include="howitworks.html" />
-    <Content Include="index-template.html" />
-    <Content Include="Index.html" />
+    <Content Include="index.html" />
     <Content Include="assets\js\script.js" />
     <Content Include="Web.config" />
   </ItemGroup>

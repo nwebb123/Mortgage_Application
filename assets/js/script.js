@@ -48,13 +48,22 @@
           
         }
         console.log("Total Principal =", roundUp(totalPrincipal));
+        console.log("Total Interest =", roundUp(totalInterest));
         console.log("Total Cost =", roundUp(totalPrincipal + totalInterest));
 
-       
-        // 3) The principal paid this month
-        let principalPayment = totalMonthlyPayment - interestPayment;
+        //Total Princial Output
+        document.getElementById("dashPrincipal").innerHTML = ` $${totalPrincipal}`;
 
-        document.getElementById("dashPrincipal").innerHTML = `The principal paid this month = $${Math.round(principalPayment)}`;
+        //Total Interest Output
+        document.getElementById("dashInterest").innerHTML = ` $${totalInterest}`;
+
+        //Total Cost Output
+        document.getElementById("dashCost").innerHTML = ` $${(totalPrincipal + totalInterest)}`;
+
+        // 3) The principal paid this month
+        //let principalPayment = totalMonthlyPayment - interestPayment;
+
+        //document.getElementById("dashPrincipal").innerHTML = `The principal paid this month = $${Math.round(principalPayment)}`;
 
        
 
