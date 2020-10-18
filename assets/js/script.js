@@ -16,7 +16,9 @@ function calcMortgage() {
     // 1) Total Monthly Payment (The payment amount)
     let totalMonthlyPayment = amountLoaned * (interestRate / 1200) / (1 - (Math.pow(base, -numOfMonths)));
 
+   
     document.getElementById("dashMonthlyPayment").innerText = `Your monthly payment = ${formatter.format(Math.round(totalMonthlyPayment || 0))}`;
+
 
 
     // 2) Table that lists the month (1-total number of payments)
@@ -38,7 +40,7 @@ function calcMortgage() {
         previousRemainingBalance = remainingBalance[i];
         totalInterest = roundUp(totalInterest + arrayInterest[i]);
         arrayTotalInterest.push(totalInterest);
-        totalPrincipal = roundUp(totalPrincipal + arrayPrincipal[i]);
+        totalPrincipal = Math.round(totalPrincipal + arrayPrincipal[i]);
 
         console.log(
             "Principal =", arrayPrincipal[i],
