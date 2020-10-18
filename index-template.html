@@ -193,13 +193,13 @@
 
 
                         <div class="col-6">
-                            <div class="card card-stats h-90">
+                            <div class="card card-stats h-90 text-center">
                                 <!-- Card body -->
                                 <div class="card-body">
                                     <div class="row">
                                         <div class="col">
                                             <h5 class="card-title text-uppercase text-muted mb-0 text-center">Your Monthly Payments</h5>
-                                            <h2 id="dashMonthlyPayment" class="text-uppercase text-muted mb-0 text-center">$478.91</h2>
+                                            <span id="dashMonthlyPayment" class="text-uppercase text-muted mb-0 text-center"></span>
                                         </div>
                                         <div class="col-auto">
                                             <div class="icon icon-shape bg-gradient-orange text-white rounded-circle shadow">
@@ -212,7 +212,7 @@
                                             <div class="text-uppercase h5 text-muted mb-0 text-center">Total Principal:</div>
                                         </div>
                                         <div class="col-6">
-                                            <div id="dashPrincipal" class="text-uppercase h5 text-muted mb-0 text-left">$25,000.00</div>
+                                            <span id="dashPrincipal" class="text-uppercase h5 text-muted mb-0 text-left"></span>
                                         </div>
                                     </div>
                                     <div class="row mt-3">
@@ -220,7 +220,7 @@
                                             <div class="text-uppercase h5 text-muted mb-0 text-center">Total Interest:</div>
                                         </div>
                                         <div class="col-6">
-                                            <div id="dashInterest" class="text-uppercase h5 text-muted mb-0 text-left">$3,306.85</div>
+                                            <span id="dashInterest" class="text-uppercase h5 text-muted mb-0 text-left"></span>
                                         </div>
                                     </div>
                                     <div class="row mt-3">
@@ -228,7 +228,7 @@
                                             <div class="text-uppercase h5 text-muted mb-0 text-center">Total Cost:</div>
                                         </div>
                                         <div class="col-6">
-                                            <div id="dashCost" class="text-uppercase h5 text-muted mb-0 text-left">$28,306.85</div>
+                                            <span id="dashCost" class="text-uppercase h5 text-muted mb-0 text-left"></span>
                                         </div>
                                     </div>
                                 </div>
@@ -360,6 +360,12 @@
     <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
     <!-- Argon JS -->
     <script src="assets/js/argon.js?v=1.2.0"></script>
+
+    <!--Custom JS-->
+    <script src="/assets/js/script.js"></script>
+   
+ 
+
 </body>
 
 </html>
