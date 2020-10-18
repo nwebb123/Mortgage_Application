@@ -78,7 +78,7 @@
     <Content Include="assets\fonts\nucleo\nucleo-icons.svg" />
     <Content Include="assets\img\astronaut+astronomy+science+space+spaceship+icon-1320195088992911588_128.png" />
     <Content Include="assets\img\brand\blue.png" />
-    <Content Include="assets\img\brand\favicon.png" />
+    <Content Include="assets\img\brand\favicon.ico" />
     <Content Include="assets\img\brand\white.png" />
     <Content Include="assets\img\icons\common\github.svg" />
     <Content Include="assets\img\icons\common\google.svg" />

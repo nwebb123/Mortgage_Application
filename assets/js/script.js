@@ -60,6 +60,14 @@
         //Total Cost Output
         document.getElementById("dashCost").innerHTML = ` $${(totalPrincipal + totalInterest)}`;
 
+        //Update Chart
+        myChart.data.datasets[0].data[0] = totalPrincipal;
+        myChart.data.datasets[0].data[1] = totalInterest;
+        myChart.update({
+            duration: 800,
+            easing: 'easeOutBounce'
+        });
+
         // 3) The principal paid this month
         //let principalPayment = totalMonthlyPayment - interestPayment;
 
