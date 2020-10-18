@@ -16,7 +16,7 @@ function calcMortgage() {
     // 1) Total Monthly Payment (The payment amount)
     let totalMonthlyPayment = amountLoaned * (interestRate / 1200) / (1 - (Math.pow(base, -numOfMonths)));
 
-    document.getElementById("dashMonthlyPayment").innerHTML = `Your monthly payment = $${Math.round(totalMonthlyPayment)}`;
+    document.getElementById("dashMonthlyPayment").innerHTML = `Your monthly payment = $${Math.round(totalMonthlyPayment || 0)}`;
 
 
     // 2) Table that lists the month (1-total number of payments)
@@ -102,6 +102,7 @@ function clearIt() {
     document.getElementById("inputAmount").value = "";
     document.getElementById("inputMonths").value = "";
     document.getElementById("inputRate").value = "";
+    calcMortgage();
 }
 
 

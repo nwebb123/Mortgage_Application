@@ -54,6 +54,10 @@
             right: 5px;
             position: fixed;
         }
+
+        .scrollableTable {
+            height: 400px;
+        }
     </style>
 </head>
 
@@ -101,7 +105,7 @@
             <div class="container-fluid">
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Search form -->
-                    <h1 class="text-light">Spaceship Mortgage - An Out of This World Loan Calculator</h1>
+                    <h1 class="text-white">Spaceship Mortgage - An Out of This World Loan Calculator</h1>
                     <span class="ml-4">
                         <i class="fas fa-user-astronaut fa-spin fa-2x"></i>
 
@@ -245,7 +249,7 @@
 
                     <div class="container">
                         <div class="row">
-                            <div class="col-4">
+                            <div class="col-4 h-100">
                                 <i class="ni ni-planet text-orange d-none d-lg-flex justify-content-center mb-5" id="jupiter"></i>
                             </div>
                             <div class="col-lg-4">
@@ -253,7 +257,7 @@
                                     <div class="card-body"><canvas id="myChart" width="400" height="120"></canvas></div>
                                 </div>
                             </div>
-                            <div class="col-4">
+                            <div class="col-4 h-100">
                                 <i class="ni ni-planet text-orange d-none d-lg-flex justify-content-center mb-5" id="jupiter"></i>
                             </div>
                         </div>
@@ -267,29 +271,19 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <div class="card">
-                                    <div class="card-header border-0">
-                                        <div class="row align-items-center">
-                                            <div class="col">
-
-                                            </div>
-                                            <div class="col text-right">
-
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div class="card scrollableTable rounded">
                                     <div class="table-responsive">
                                         <!-- Table for monthly payment info -->
                                         <!-- <tr><th>monthNum</th><td>payment</td><td>principle</td><td>interest</td><td>totalInterest</td><td>balance</td></tr> -->
                                         <table class="table align-items-center table-flush">
                                             <thead class="thead-light">
                                                 <tr>
-                                                    <th scope="col">Month</th>
+                                                    <th scope="col" class="rounded border-top-0">Month</th>
                                                     <th scope="col">Payment</th>
                                                     <th scope="col">Principal</th>
                                                     <th scope="col">Interest</th>
                                                     <th scope="col">Total Interest</th>
-                                                    <th scope="col">Balance</th>
+                                                    <th scope="col" class="rounded border-top-0">Balance</th>
 
                                             </tr>
                                         </thead>
