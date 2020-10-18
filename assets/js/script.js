@@ -16,7 +16,7 @@ function calcMortgage() {
     // 1) Total Monthly Payment (The payment amount)
     let totalMonthlyPayment = amountLoaned * (interestRate / 1200) / (1 - (Math.pow(base, -numOfMonths)));
 
-    document.getElementById("dashMonthlyPayment").innerHTML = `Your monthly payment = $${Math.round(totalMonthlyPayment || 0)}`;
+    document.getElementById("dashMonthlyPayment").innerText = `Your monthly payment = ${formatter.format(Math.round(totalMonthlyPayment || 0))}`;
 
 
     // 2) Table that lists the month (1-total number of payments)
@@ -53,17 +53,17 @@ function calcMortgage() {
     console.log("Total Cost =", roundUp(totalPrincipal + totalInterest));
 
     //Total Princial Output
-    document.getElementById("dashPrincipal").innerHTML = ` $${totalPrincipal}`;
+    document.getElementById("dashPrincipal").innerText = ` ${formatter.format(totalPrincipal)}`;
 
     //Total Interest Output
-    document.getElementById("dashInterest").innerHTML = ` $${totalInterest}`;
+    document.getElementById("dashInterest").innerText = ` ${formatter.format(totalInterest)}`;
 
     //Total Cost Output
-    document.getElementById("dashCost").innerHTML = ` $${(totalPrincipal + totalInterest)}`;
+    document.getElementById("dashCost").innerText = ` ${formatter.format(totalPrincipal + totalInterest)}`;
 
     //Update Chart
     myChart.data.datasets[0].data[0] = totalPrincipal;
-    myChart.data.datasets[0].data[1] = totalInterest;
+    myChart.data.datasets[0].data[1] = totalInterest + totalPrincipal;
     myChart.update({
         duration: 800,
         easing: 'easeOutBounce'
@@ -89,11 +89,11 @@ function populateTable(months, monthlyPayment, principals, interests, totalInter
         let balance = row.insertCell(5);
 
         month.innerHTML = i + 1;
-        payment.innerHTML = monthlyPayment;
-        principal.innerHTML = principals[i];
-        interest.innerHTML = interests[i];
-        totalInterest.innerHTML = totalInterests[i];
-        balance.innerHTML = balances[i];
+        payment.innerHTML = formatter.format(monthlyPayment);
+        principal.innerHTML = formatter.format(principals[i]);
+        interest.innerHTML = formatter.format(interests[i]);
+        totalInterest.innerHTML = formatter.format(totalInterests[i]);
+        balance.innerHTML = formatter.format(balances[i]);
 
     }
 }
@@ -104,6 +104,7 @@ function clearIt() {
     document.getElementById("inputRate").value = "";
     calcMortgage();
 }
+
 
 
 

@@ -320,11 +320,18 @@
     <script src="https://cdnjs.com/libraries/Chart.js"></script>
 
     <script>
+        const formatter = new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 2
+        })
+
+
         var ctx = document.getElementById('myChart').getContext('2d');
         var myChart = new Chart(ctx, {
             type: 'bar',
             data: {
-                labels: ['Principal', 'Interest'],
+                labels: ['Principal', 'Total Cost'],
                 datasets: [{
                     data: [0, 0],
                     backgroundColor: [
@@ -338,9 +345,17 @@
                 scales: {
                     yAxes: [{
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: true,
+
                         }
                     }]
+                },
+                tooltips: {
+                    callbacks: {
+                        label: function (tooltipItem, data) {
+                            return formatter.format(tooltipItem.yLabel);
+                        },
+                    }
                 }
             }
         });
