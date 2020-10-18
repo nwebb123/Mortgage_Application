@@ -80,7 +80,15 @@
         // 8) Total Cost
         //let totalCost = ;
 
-    };
+};
+
+function clearIt() {
+    document.getElementById("inputAmount").value="";
+    document.getElementById("inputMonths").value="";
+    document.getElementById("inputRate").value="";
+}
+
+
 
   
 
