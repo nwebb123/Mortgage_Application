@@ -107,10 +107,13 @@ function clearIt() {
     calcMortgage();
 }
 
+var invalidChars = ["-", "e", "+", "E"];
 
-
-
-
+$("input[type='number']").on("keydown", function (e) {
+    if (invalidChars.includes(e.key)) {
+        e.preventDefault();
+    }
+});
 
 document.getElementById("calcBtn").addEventListener("click", calcMortgage);
 
