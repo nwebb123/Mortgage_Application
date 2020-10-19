@@ -22,6 +22,24 @@ function calcMortgage() {
         return
     }
 
+    if (amountLoaned > 9999999999) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Too Big a Loan',
+            text: 'Please try a smaller loan'
+        })
+        return
+
+    }
+    if (interestRate > 999) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Too High of Interest Rate',
+            text: 'Please input a smaller interest rate'
+        })
+        return
+
+    }
     // 1) Total Monthly Payment (The payment amount)
     let totalMonthlyPayment = amountLoaned * (interestRate / 1200) / (1 - (Math.pow(base, -numOfMonths)));
 
