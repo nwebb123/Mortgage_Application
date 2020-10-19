@@ -13,6 +13,15 @@ function calcMortgage() {
 
     let base = (1 + (interestRate / 1200));
 
+    if (numOfMonths > 400) {
+        Swal.fire({
+            icon: 'warning',
+            title: 'Too Many Months',
+            text: 'Please input 400 months or less'
+        })
+        return
+    }
+
     // 1) Total Monthly Payment (The payment amount)
     let totalMonthlyPayment = amountLoaned * (interestRate / 1200) / (1 - (Math.pow(base, -numOfMonths)));
 
@@ -42,17 +51,14 @@ function calcMortgage() {
         arrayTotalInterest.push(totalInterest);
         totalPrincipal = Math.round(totalPrincipal + arrayPrincipal[i]);
 
-        console.log(
-            "Principal =", arrayPrincipal[i],
-            ", Interest =", arrayInterest[i],
-            "Total Interest=", totalInterest,
-            "Balance =", remainingBalance[i],
-            "\n\n"
-        );
+        //console.log(
+        //    "Principal =", arrayPrincipal[i],
+        //    ", Interest =", arrayInterest[i],
+        //    "Total Interest=", totalInterest,
+        //    "Balance =", remainingBalance[i],
+        //    "\n\n"
+        //);
     }
-    console.log("Total Principal =", totalPrincipal);
-    console.log("Total Interest =", roundUp(totalInterest));
-    console.log("Total Cost =", roundUp(totalPrincipal + totalInterest));
 
     //Total Princial Output
     document.getElementById("dashPrincipal").innerText = ` ${formatter.format(totalPrincipal)}`;

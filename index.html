@@ -59,7 +59,11 @@
             height: 400px;
         }
 
-       
+        .glowy {
+            -webkit-box-shadow: 0px 0px 12px #fc41a9;
+            -moz-box-shadow: 0px 0px 12px #fc41a9;
+            box-shadow: 0px 0px 12px #fc41a9;
+        }
     </style>
 </head>
 
@@ -146,7 +150,7 @@
                     <!-- Card stats -->
                     <div class="row">
                         <div class="col-lg-6">
-                            <div class="card card-stats h-90">
+                            <div class="card card-stats h-90 glowy">
                                 <!-- Card body -->
                                 <div class="card-body">
                                     <div class="row">
@@ -161,7 +165,7 @@
                                                 <label class="card-title text-uppercase text-muted mb-0">
                                                     Term (Months)
                                                 </label>
-                                                <input type="number" id="inputMonths"  />
+                                                <input type="number" max="400" id="inputMonths" />
                                             </div>
 
 
@@ -200,7 +204,7 @@
 
 
                         <div class="col-lg-6">
-                            <div class="card card-stats h-90 text-center">
+                            <div class="card card-stats h-90 text-center glowy">
                                 <!-- Card body -->
                                 <div class="card-body">
                                     <div class="row">
@@ -255,7 +259,7 @@
                                 <i class="ni ni-planet text-orange d-none d-lg-flex justify-content-center mb-5" id="jupiter"></i>
                             </div>
                             <div class="col-lg-4">
-                                <div class="card">
+                                <div class="card glowy">
                                     <div class="card-body"><canvas id="myChart" width="400" height="120"></canvas></div>
                                 </div>
                             </div>
@@ -273,7 +277,7 @@
                         </div>
                         <div class="row">
                             <div class="col-12">
-                                <div class="card scrollableTable rounded">
+                                <div class="card scrollableTable rounded glowy">
                                     <div class="table-responsive">
                                         <!-- Table for monthly payment info -->
                                         <!-- <tr><th>monthNum</th><td>payment</td><td>principle</td><td>interest</td><td>totalInterest</td><td>balance</td></tr> -->
@@ -287,15 +291,14 @@
                                                     <th scope="col">Total Interest</th>
                                                     <th scope="col" class="rounded border-top-0">Balance</th>
 
-                                            </tr>
-                                        </thead>
-                                        <tbody id="tableBody">
-                                            
-                                        </tbody>
-                                    </table>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="tableBody">
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
                             <!-- Projects table -->
 
@@ -317,6 +320,7 @@
     <script src="assets/vendor/chart.js/dist/Chart.extension.js"></script>
     <!-- Argon JS -->
     <script src="assets/js/argon.js?v=1.2.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
     <!-- ChartJs  -->
     <script src="https://cdnjs.com/libraries/Chart.js"></script>
